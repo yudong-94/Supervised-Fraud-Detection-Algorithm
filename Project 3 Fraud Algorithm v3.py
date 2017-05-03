@@ -113,7 +113,6 @@ print sum(y_test) / len(y_test)
 MI = mutual_info_classif(features,labels)
 print MI
 
-get_ipython().magic(u'matplotlib inline')
 plt.bar(range(1,len(MI)+1), MI)
 plt.title("Mutual Information Plot")
 plt.xlabel("Variable Index")
@@ -139,7 +138,7 @@ MI[np.array(range(len(MI)))[MI > 0.004]]
 
 # In[75]:
 
-# select only variables with MI larger than 0.005
+# select only variables with MI larger than 0.004
 selected = np.array(range(len(MI)))[MI > 0.004]
 features_sub = features[:,selected]
 
@@ -602,25 +601,3 @@ score_df.to_csv("Fraud Scores.csv")
 
 
 # In[70]:
-
-# store all the variables for subsequent use
-get_ipython().magic(u'store data')
-get_ipython().magic(u'store df')
-get_ipython().magic(u'store features')
-get_ipython().magic(u'store labels')
-get_ipython().magic(u'store X_train')
-get_ipython().magic(u'store X_test')
-get_ipython().magic(u'store y_train')
-get_ipython().magic(u'store y_test')
-get_ipython().magic(u'store data')
-get_ipython().magic(u'store NB_features')
-get_ipython().magic(u'store LR_features')
-get_ipython().magic(u'store RF_features')
-get_ipython().magic(u'store SVM_features')
-get_ipython().magic(u'store NN_features')
-
-
-# In[ ]:
-
-
-
